@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/drawable-anydpi/ic_add_for_fab.xml" value="0.1195" />
+        <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1195" />
         <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
+        <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/layout/fragment_second.xml" value="0.20416666666666666" />
         <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/layout/wordlist_item.xml" value="0.1545778834720571" />
+        <entry key="..\:/Kuliah/Semester-5/Pemrograman-Mobile/Projects/Week_4_RecyclerView/Android_fundamentals_04.5_RecyclerView/app/src/main/res/menu/menu_main.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
