@@ -18,14 +18,22 @@ import com.example.recyclerview.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
+    private final LinkedList<String> mWordList = new LinkedList<>();
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Put initial data into the word list.
+        for (int i = 0; i < 20; i++) {
+            mWordList.addLast("Word " + i);
+        }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
