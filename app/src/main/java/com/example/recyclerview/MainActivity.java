@@ -21,8 +21,10 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private final LinkedList<String> mWordList = new LinkedList<>();
+    private final LinkedList<String> mRecipeList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
+    private RecipeListAdapter nAdapter;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private ArrayList<RecipeData> recipeList;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         prepareRecipeList();
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         setSupportActionBar(binding.toolbar);
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -42,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(recipeListAdapter);
         recipeListAdapter.setOnItemClickListener(onItemClickListener);
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int wordListSize = mWordList.size();
+                // Add a new word to the wordList.
+                mWordList.addLast("+ Word " + wordListSize);
+                // Notify the adapter that the data has changed.
+                mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
+                // Scroll to the bottom.
+                mRecyclerView.smoothScrollToPosition(wordListSize);
+            }
+        });
     }
 
     private void prepareRecipeList() {
@@ -92,9 +108,6 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_reset) {
             mWordList.clear();
-            for (int i = 1; i < 21; i++) {
-                mWordList.add("Word " + i);
-            }
             Objects.requireNonNull(mRecyclerView.getAdapter()).notifyDataSetChanged();
             return true;
         }

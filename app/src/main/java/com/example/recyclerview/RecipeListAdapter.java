@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -22,9 +24,9 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
     }
 
     @Override
-    public RecipeListAdapter.RecipeViewHolder onCreateViewHolder( ViewGroup viewGroup, int i) {
-        View mItemView = mInflater.inflate(R.layout.activity_recipe_list, viewGroup, false);
-        return new RecipeViewHolder(mItemView);
+    public RecipeListAdapter.RecipeViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+        View mItemView = mInflater.inflate(R.layout.activity_recipe_list, parent, false);
+        return new RecipeViewHolder(mItemView,this);
     }
 
     @Override
@@ -50,7 +52,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         TextView name, description;
         ImageView image;
 
-        public RecipeViewHolder(View itemView){
+        public RecipeViewHolder(View itemView, RecipeListAdapter recipeListAdapter){
             super(itemView);
             name = itemView.findViewById(R.id.recipe_name);
             description = itemView.findViewById(R.id.recipe_description);
